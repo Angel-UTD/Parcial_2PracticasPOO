@@ -50,7 +50,6 @@ class App:
                 case "2":
                     self.borrarPantalla()
                     id = input("Ingresa el ID del coche a eliminar: ").strip()
-                    # Metodo estatico: no se necesita crear un objeto
                     respuesta = cochesBD.cochesBD.eliminar(id)
                     self.respuesta_sql(respuesta)
                 case "3":
@@ -63,7 +62,6 @@ class App:
                     del coche1
                 case "4":
                     self.borrarPantalla()
-                    # Metodo estatico: no se necesita crear un objeto
                     registros = cochesBD.cochesBD.consultar()
                     if len(registros) > 0:
                         numero_coches = 1
