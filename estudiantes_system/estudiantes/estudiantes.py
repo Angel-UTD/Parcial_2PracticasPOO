@@ -1,0 +1,59 @@
+from conexionBD import cursor, conexion
+
+
+class Estudiantes:
+    def __init__(self, nombre, nota):
+        self._nombre = nombre
+        self._nota = nota
+
+    # ---------- GET (@property) ----------
+    @property
+    def nombre(self):
+        return self._nombre
+
+    @property
+    def nota(self):
+        return self._nota
+
+    # ---------- SET (@variable.setter) ----------
+    @nombre.setter
+    def nombre(self, nombre):
+        self._nombre = nombre
+
+    @nota.setter
+    def nota(self, nota):
+        self._nota = nota
+
+    # ---------- Metodos de BD ----------
+    def insertar(self):
+        try:
+            cursor.execute("INSERT INTO estudiante VALUES (NULL, %s, %s)", (self._nombre, self._nota))
+            conexion.commit()
+            return True
+        except Exception:
+            return False
+
+    @staticmethod
+    def consultar():
+        try:
+            cursor.execute("select * from estudiante")
+            return cursor.fetchall()
+        except Exception:
+            return []
+
+    @staticmethod
+    def eliminar(id):
+        try:
+            cursor.execute("delete from estudiante where id = %s", (id,))
+            conexion.commit()
+            return True
+        except Exception:
+            return False
+
+    def actualizar(self, id):
+        try:
+            cursor.execute("update estudiante set nombre = %s, nota = %s where id = %s", (self._nombre, self._nota, id))
+            conexion.commit()
+            return True
+        except Exception:
+            return False
