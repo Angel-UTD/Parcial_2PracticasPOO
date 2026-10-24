@@ -3,8 +3,6 @@ from .coches import Coches
 
 
 class cochesBD(Coches):
-    # Hereda el constructor y los get/set (@property) de la clase Coches
-
     def insertar(self):
         try:
             cursor.execute(
