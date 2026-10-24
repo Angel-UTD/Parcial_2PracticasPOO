@@ -6,7 +6,6 @@ class Estudiantes:
         self._nombre = nombre
         self._nota = nota
 
-    # ---------- GET (@property) ----------
     @property
     def nombre(self):
         return self._nombre
@@ -15,7 +14,6 @@ class Estudiantes:
     def nota(self):
         return self._nota
 
-    # ---------- SET (@variable.setter) ----------
     @nombre.setter
     def nombre(self, nombre):
         self._nombre = nombre
@@ -24,7 +22,6 @@ class Estudiantes:
     def nota(self, nota):
         self._nota = nota
 
-    # ---------- Metodos de BD ----------
     def insertar(self):
         try:
             cursor.execute("INSERT INTO estudiante VALUES (NULL, %s, %s)", (self._nombre, self._nota))
