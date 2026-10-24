@@ -13,7 +13,6 @@ class Coches:
     def frenar(self):
         self._velocidad -= 1
 
-    # ---------- GET (@property) ----------
     @property
     def marca(self):
         return self._marca
@@ -38,7 +37,6 @@ class Coches:
     def asientos(self):
         return self._asientos
 
-    # ---------- SET (@variable.setter) ----------
     @marca.setter
     def marca(self, marca):
         self._marca = marca
