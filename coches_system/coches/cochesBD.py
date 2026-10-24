@@ -10,7 +10,6 @@ class cochesBD:
         self._potencia = potencia
         self._asientos = asientos
 
-    # ---------- GET (@property) ----------
     @property
     def marca(self):
         return self._marca
@@ -35,7 +34,6 @@ class cochesBD:
     def asientos(self):
         return self._asientos
 
-    # ---------- SET (@variable.setter) ----------
     @marca.setter
     def marca(self, marca):
         self._marca = marca
@@ -60,7 +58,6 @@ class cochesBD:
     def asientos(self, asientos):
         self._asientos = asientos
 
-    # ---------- Metodos de BD ----------
     def insertar(self):
         try:
             cursor.execute(
