@@ -45,7 +45,6 @@ class App:
                 case "2":
                     self.borrarPantalla()
                     id = input("Ingresa el ID del estudiante a eliminar: ").strip()
-                    # Metodo estatico: no se necesita crear un objeto
                     respuesta = estudiantes.Estudiantes.eliminar(id)
                     self.respuesta_sql(respuesta)
                 case "3":
@@ -57,7 +56,6 @@ class App:
                     del estudiante1
                 case "4":
                     self.borrarPantalla()
-                    # Metodo estatico: no se necesita crear un objeto
                     registros = estudiantes.Estudiantes.consultar()
                     if len(registros) > 0:
                         numero_estudiantes = 1
