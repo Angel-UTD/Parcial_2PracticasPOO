@@ -3,10 +3,6 @@ from .coches import Coches
 
 
 class cochesBD(Coches):
-<<<<<<< HEAD
-
-=======
->>>>>>> abb6956773afa27b1821bc68cf8e749da4ed6c9d
     def insertar(self):
         try:
             cursor.execute(
